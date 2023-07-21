@@ -3,6 +3,7 @@ package com.example.paging.di
 import com.example.paging.api.ApiClient
 import com.example.paging.repository.HomeRepository
 import com.example.paging.ui.fragments.home.ImagesPagingSource
+import com.example.paging.ui.fragments.home.adapter.ImageLoaderAdapter
 import com.example.paging.ui.fragments.home.adapter.ImagesAdapter
 import com.example.paging.utils.Constants
 import com.example.paging.viewmodel.HomeViewModel
@@ -34,6 +35,9 @@ object AppModule {
             single { HomeRepository(get()) }
 
             single { ImagesPagingSource(get()) }
+
+
+            single { ImageLoaderAdapter() }
 
             viewModel { HomeViewModel(get()) }
 
